@@ -19,6 +19,9 @@ def getMyMacAddress() -> str:
 
 def getSenderMacAddress() -> str:
   return esp_now.getSenderMAC()
+
+def send(msg: str, mac: str = None):
+  esp_now.send(msg, mac)
   
 def readAsNumber() -> float or int:
   return esp_now.readAsNumber()
