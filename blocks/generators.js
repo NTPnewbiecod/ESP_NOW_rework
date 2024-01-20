@@ -1,10 +1,10 @@
-
 Blockly.Python['esp_now_add_peer'] = function(block) {
   Blockly.Python.definitions_['import_betterESPNOW'] = 'import espNowAbstractionLayer as now';
 
   var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+  var value_channel = Blockly.Python.valueToCode(block, 'channel', Blockly.Python.ORDER_ATOMIC);
 
-  var code = `now.addPeer(${value_value})\n`;
+  var code = `now.addPeer(${value_value}, ${value_channel})\n`;
   return code;
 };
 
@@ -20,7 +20,7 @@ Blockly.Python['esp_now_remove_peer'] = function(block) {
 Blockly.Python['esp_now_DEBUG_print_peers_Info'] = function(block) {
   Blockly.Python.definitions_['import_betterESPNOW'] = 'import espNowAbstractionLayer as now';
 
-  var code = `now.DEBUG_printPeersInfo()`;
+  var code = `now.DEBUG_printPeersInfo()\n`;
   return code;
 };
 

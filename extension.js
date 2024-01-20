@@ -7,13 +7,17 @@
     icon: "/static/icon.png", // Category icon
     color: "#E74C3C", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category
-        // added
         {
             xml: `
                 <block type="esp_now_add_peer">
                     <value name="value">
                         <shadow type="text">
                             <field name="TEXT">FF:FF:FF:FF:FF:FF</field>
+                        </shadow>
+                    </value>
+                    <value name="channel">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
                         </shadow>
                     </value>
                 </block>

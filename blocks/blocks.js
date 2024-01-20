@@ -1,12 +1,17 @@
 Blockly.defineBlocksWithJsonArray([
 {
   "type": "esp_now_add_peer",
-  "message0": "ESP-NOW Add peer  %1",
+  "message0": "ESP-NOW Add peer  %1 using Wifi channel %2",
   "args0": [
     {
       "type": "input_value",
       "name": "value",
       "check": ["String"]
+    },
+    {
+      "type": "input_value",
+      "name": "channel",
+      "check": "Number"
     }
   ],
   "inputsInline": true,
@@ -18,7 +23,7 @@ Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "esp_now_remove_peer",
-  "message0": "ESP-NOW Add peer  %1",
+  "message0": "ESP-NOW Remove peer  %1",
   "args0": [
     {
       "type": "input_value",
@@ -132,6 +137,8 @@ Blockly.defineBlocksWithJsonArray([
   "type": "esp_now_DEBUG_print_peers_Info",
   "message0": "ESP-NOW DEBUG print peers Info",
   "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": "#E74C3C",
   "tooltip": "",
   "helpUrl": ""

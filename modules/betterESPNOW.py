@@ -73,9 +73,8 @@ class ESPN ():
     """
     return self._EspNow.get_peers()
   
-  def _print_peers_info(self):
-    """print information on all registered peer.
-    """
+  def _DEBUG_print_peers_info(self):
+    print(f'raw data : \n{self._get_peers()}\n\n\n')
     for i in  self._get_peers():
       mac, lmk, channel, ifdix, is_encrypt = i
       mac = ":".join("%02X" % i for i in mac)
@@ -89,7 +88,23 @@ class ESPN ():
       print(f'wifi channel: {channel}')
       print(f'ifdix:        {ifdix_name}')
       print(f'is_encrypt:   {is_encrypt}')
-  
+     
+  def DEBUG_print_peers_info(self):
+    print(f'raw data : \n{self._get_peers()}\n\n\n')
+    for i in  self._get_peers():
+      mac, lmk, channel, ifdix, is_encrypt = i
+      mac = ":".join("%02X" % i for i in mac)
+      # lmk = "".join( str(i) for i in lmk)
+      if ifdix == 0:
+        ifdix_name = "network.STA_IF"
+      else:
+        ifdix_name = "network.AP_IF"
+      print(f'mac:          {mac}')
+      print(f'LMK key:      {lmk}')
+      print(f'wifi channel: {channel}')
+      print(f'ifdix:        {ifdix_name}')
+      print(f'is_encrypt:   {is_encrypt}')
+      
   
   def addPeer(self, addr_in :str, channel :int= 0,) -> None:
     """Add/register the provided mac address as a peer. 

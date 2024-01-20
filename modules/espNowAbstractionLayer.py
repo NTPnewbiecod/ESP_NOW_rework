@@ -2,14 +2,20 @@ import betterESPNOW
 
 esp_now = betterESPNOW.ESPN()
 
-def addPeer(mac: str):
-  esp_now.addPeer(mac)
+def addPeer(mac: str, _channel: int):
+  esp_now.addPeer(mac, _channel)
 
 def removePeer(mac: str):
   esp_now.removePeer(mac)
 
 def DEBUG_printPeersInfo():
-  esp_now._print_peers_info()
+  try:
+    esp_now._DEBUG_print_peers_info()
+  except:
+    try:
+      esp_now.DEBUG_print_peers_info()
+    except:
+      pass
 
 def DEBUG_getPeerCount():
   return esp_now._get_peer_count()
