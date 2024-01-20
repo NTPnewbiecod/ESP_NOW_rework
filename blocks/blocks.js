@@ -17,6 +17,32 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
+  "type": "esp_now_remove_peer",
+  "message0": "ESP-NOW Add peer  %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "value",
+      "check": ["String"]
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#E74C3C",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "esp_now_get_my_mac",
+  "message0": "ESP-NOW get my MAC address",
+  "inputsInline": true,
+  "output": "String",
+  "colour": "#E74C3C",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
   "type": "esp_now_send",
   "message0": "ESP-NOW send  %1",
   "args0": [
@@ -94,8 +120,8 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "esp_now_get_my_mac",
-  "message0": "ESP-NOW get my MAC address",
+  "type": "esp_now_get_sender_mac",
+  "message0": "ESP-NOW get sender MAC address",
   "inputsInline": true,
   "output": "String",
   "colour": "#E74C3C",
@@ -103,8 +129,16 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "esp_now_get_sender_mac",
-  "message0": "ESP-NOW get sender MAC address",
+  "type": "esp_now_DEBUG_print_peers_Info",
+  "message0": "ESP-NOW DEBUG print peers Info",
+  "inputsInline": true,
+  "colour": "#E74C3C",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "esp_now_DEBUG_get_peer_count",
+  "message0": "ESP-NOW DEBUG_get_peer_count",
   "inputsInline": true,
   "output": "String",
   "colour": "#E74C3C",
