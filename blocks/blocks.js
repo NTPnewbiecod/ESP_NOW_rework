@@ -1,5 +1,22 @@
 Blockly.defineBlocksWithJsonArray([
 {
+  "type": "esp_now_add_peer",
+  "message0": "ESP-NOW Add peer  %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "value",
+      "check": ["String"]
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#E74C3C",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
   "type": "esp_now_send",
   "message0": "ESP-NOW send  %1",
   "args0": [

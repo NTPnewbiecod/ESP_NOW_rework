@@ -10,6 +10,40 @@
         "esp_now_get_my_mac",
         {
             xml: `
+                <block type="esp_now_add_peer">
+                    <value name="value">
+                        <shadow type="text">
+                            <field name="address">FF:FF:FF:FF:FF:FF</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="esp_now_remove_peer">
+                    <value name="value">
+                        <shadow type="text">
+                            <field name="address">FF:FF:FF:FF:FF:FF</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="esp_now_DEBUG_print_peers_Info">
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="esp_now_DEBUG_get_peer_count">
+                </block>
+            `
+        },
+        {
+            xml: `
                 <block type="esp_now_send">
                     <value name="value">
                         <shadow type="text">
