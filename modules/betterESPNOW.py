@@ -73,9 +73,10 @@ class ESPN ():
     """
     return self._EspNow.get_peers()
   
-  def _DEBUG_print_peers_info(self):
+  def _DEBUG_printPeersInfo(self):
     print(f'raw data : \n{self._get_peers()}\n\n\n')
-    for i in  self._get_peers():
+    peers = self._get_peers()
+    for i in peers:
       mac, lmk, channel, ifdix, is_encrypt = i
       mac = ":".join("%02X" % i for i in mac)
       # lmk = "".join( str(i) for i in lmk)
@@ -83,27 +84,7 @@ class ESPN ():
         ifdix_name = "network.STA_IF"
       else:
         ifdix_name = "network.AP_IF"
-      print(f'mac:          {mac}')
-      print(f'LMK key:      {lmk}')
-      print(f'wifi channel: {channel}')
-      print(f'ifdix:        {ifdix_name}')
-      print(f'is_encrypt:   {is_encrypt}')
-     
-  def DEBUG_print_peers_info(self):
-    print(f'raw data : \n{self._get_peers()}\n\n\n')
-    for i in  self._get_peers():
-      mac, lmk, channel, ifdix, is_encrypt = i
-      mac = ":".join("%02X" % i for i in mac)
-      # lmk = "".join( str(i) for i in lmk)
-      if ifdix == 0:
-        ifdix_name = "network.STA_IF"
-      else:
-        ifdix_name = "network.AP_IF"
-      print(f'mac:          {mac}')
-      print(f'LMK key:      {lmk}')
-      print(f'wifi channel: {channel}')
-      print(f'ifdix:        {ifdix_name}')
-      print(f'is_encrypt:   {is_encrypt}')
+      print(f'mac:          {mac}\nLMK key:      {lmk}\nwifi channel: {channel}\nifdix:        {ifdix_name}\nis_encrypt:   {is_encrypt}\n')
       
   
   def addPeer(self, addr_in :str, channel :int= 0,) -> None:
@@ -191,5 +172,34 @@ class ESPN ():
   
   
   
+esp_now = ESPN()
+
+def addPeer(mac: str, _channel: int):
+  esp_now.addPeer(mac, _channel)
+
+def removePeer(mac: str):
+  esp_now.removePeer(mac)
+
+def DEBUG_printPeersInfo():
+    esp_now._DEBUG_printPeersInfo()
+
+def DEBUG_getPeerCount():
+  return esp_now._get_peer_count()
+
+def getMyMacAddress() -> str:
+  return esp_now.getMyMAC()
+
+def getSenderMacAddress() -> str:
+  return esp_now.getSenderMAC()
+
+def send(msg: str, mac: str = None):
+  esp_now.send(msg, mac)
   
-  
+def readAsNumber() -> float or int:
+  return esp_now.readAsNumber()
+
+def readAsText() -> str:
+  return esp_now.readAsText()
+
+def _isReadyToRead():
+  esp_now._is_ready_to_read()
