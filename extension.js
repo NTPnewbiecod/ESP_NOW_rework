@@ -1,9 +1,9 @@
 ({
     name: "ESP-NOW", // Category Name
-    description: "Communication between KidBright32 via ESP-NOW",
-    author: "microBlock",
+    description: "Communication between ESP-32 via ESP-NOW",
+    author: "Naythan_touqe",
     category: "Communication",
-    version: "1.0.1",
+    version: "1.0.0",
     icon: "/static/icon.png", // Category icon
     color: "#E74C3C", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category

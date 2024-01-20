@@ -49,13 +49,13 @@ Blockly.defineBlocksWithJsonArray([
 {
   "type": "esp_now_is_ready_read",
   "message0": "ESP-NOW is ready to read ?",
-  "inputsInline": true,
   "output": [
     "Boolean",
     "Number"
   ],
+  "inputsInline": true,
   "colour": "#E74C3C",
-  "tooltip": "",
+  "tooltip": "this function is obsoleted\nnot recommend using",
   "helpUrl": ""
 },
 {

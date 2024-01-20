@@ -29,3 +29,5 @@ def readAsNumber() -> float or int:
 def readAsText() -> str:
   return esp_now.readAsText()
 
+def _isReadyToRead():
+  esp_now._is_ready_to_read()
